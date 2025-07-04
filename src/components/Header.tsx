@@ -1,11 +1,14 @@
 import { Button } from "@/components/ui/button";
-import { Menu, X, Home, Search, Users, Phone } from "lucide-react";
+import { Menu, X, Home, Search, Users, Phone, User } from "lucide-react";
 import { useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { useAuth } from "@/hooks/useAuth";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
+  const { user, signOut } = useAuth();
 
   const navigation = [
     { name: "Home", href: "/", icon: Home },
@@ -48,12 +51,26 @@ const Header = () => {
 
           {/* Desktop CTA Buttons */}
           <div className="hidden md:flex items-center space-x-4">
-            <Button variant="ghost" size="sm">
-              Sign In
-            </Button>
-            <Button variant="default" size="sm">
-              Get Started
-            </Button>
+            {user ? (
+              <>
+                <Button variant="ghost" size="sm" onClick={() => navigate('/dashboard')}>
+                  <User className="h-4 w-4 mr-2" />
+                  Dashboard
+                </Button>
+                <Button variant="outline" size="sm" onClick={() => signOut()}>
+                  Sign Out
+                </Button>
+              </>
+            ) : (
+              <>
+                <Button variant="ghost" size="sm" onClick={() => navigate('/auth')}>
+                  Sign In
+                </Button>
+                <Button variant="default" size="sm" onClick={() => navigate('/auth')}>
+                  Get Started
+                </Button>
+              </>
+            )}
           </div>
 
           {/* Mobile menu button */}
@@ -85,12 +102,38 @@ const Header = () => {
                 </Link>
               ))}
               <div className="flex flex-col space-y-2 px-3 pt-4 border-t border-border">
-                <Button variant="ghost" size="sm" className="justify-start">
-                  Sign In
-                </Button>
-                <Button variant="default" size="sm" className="justify-start">
-                  Get Started
-                </Button>
+                {user ? (
+                  <>
+                    <Button variant="ghost" size="sm" className="justify-start" onClick={() => {
+                      navigate('/dashboard');
+                      setIsMenuOpen(false);
+                    }}>
+                      <User className="h-4 w-4 mr-2" />
+                      Dashboard
+                    </Button>
+                    <Button variant="outline" size="sm" className="justify-start" onClick={() => {
+                      signOut();
+                      setIsMenuOpen(false);
+                    }}>
+                      Sign Out
+                    </Button>
+                  </>
+                ) : (
+                  <>
+                    <Button variant="ghost" size="sm" className="justify-start" onClick={() => {
+                      navigate('/auth');
+                      setIsMenuOpen(false);
+                    }}>
+                      Sign In
+                    </Button>
+                    <Button variant="default" size="sm" className="justify-start" onClick={() => {
+                      navigate('/auth');
+                      setIsMenuOpen(false);
+                    }}>
+                      Get Started
+                    </Button>
+                  </>
+                )}
               </div>
             </div>
           </div>

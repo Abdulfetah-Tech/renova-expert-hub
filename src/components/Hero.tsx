@@ -1,8 +1,11 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, CheckCircle } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 import heroImage from "@/assets/hero-renovation.jpg";
 
 const Hero = () => {
+  const navigate = useNavigate();
+  
   return (
     <section className="relative min-h-screen flex items-center bg-gradient-subtle overflow-hidden">
       {/* Background Image */}
@@ -49,11 +52,11 @@ const Hero = () => {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4">
-            <Button variant="hero" size="xl" className="group">
+            <Button variant="hero" size="xl" className="group" onClick={() => navigate('/auth')}>
               Find Experts Near You
               <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
             </Button>
-            <Button variant="outline" size="xl">
+            <Button variant="outline" size="xl" onClick={() => navigate('/auth')}>
               Join as Expert
             </Button>
           </div>
