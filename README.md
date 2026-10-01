@@ -1,73 +1,200 @@
-# Welcome to your Lovable project
+# Renova Expert Hub
 
-## Project info
+A modern, full-stack web application built with **React**, **TypeScript**, and **Tailwind CSS**, featuring a sophisticated UI powered by Radix UI components and Supabase backend integration.
 
-**URL**: https://lovable.dev/projects/cd82266b-66f9-484d-8bf0-386bfe4237b1
+## Overview
 
-## How can I edit this code?
+Renova Expert Hub is a feature-rich platform designed to deliver a seamless user experience with a professional, responsive interface. The application leverages modern web technologies and best practices to provide a scalable and maintainable codebase.
 
-There are several ways of editing your application.
+## Tech Stack
 
-**Use Lovable**
+### Frontend
+- **React 18.3** - UI library for building interactive components
+- **TypeScript 5.5** - Type-safe JavaScript development
+- **Vite 5.4** - Next-generation frontend build tool
+- **Tailwind CSS 3.4** - Utility-first CSS framework
+- **Radix UI** - Unstyled, accessible component library
+- **Shadcn/ui** - High-quality React components built on Radix UI and Tailwind CSS
+- **React Router DOM 6.30** - Client-side routing
+- **React Hook Form 7.53** - Efficient form management
+- **Zod 3.23** - TypeScript-first schema validation
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/cd82266b-66f9-484d-8bf0-386bfe4237b1) and start prompting.
+### Backend & Database
+- **Supabase** - Open-source Firebase alternative with PostgreSQL backend
+- **PostgreSQL** - Relational database (via Supabase)
 
-Changes made via Lovable will be committed automatically to this repo.
+### State Management & Data Fetching
+- **TanStack React Query 5.56** - Powerful server state management
+- **React Hook Form** - Form state management
 
-**Use your preferred IDE**
+### UI Components & Styling
+- **Lucide React** - Beautiful, consistent icon library
+- **Recharts 2.12** - Composable charting library for data visualization
+- **Embla Carousel** - Lightweight carousel solution
+- **Sonner** - Toast notifications
+- **Next Themes** - Dark mode support
+- **CVA (Class Variance Authority)** - Type-safe component variants
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+### Developer Tools
+- **ESLint 9.9** - Code quality and consistency
+- **Prettier** - Code formatter
+- **Tailwind CSS** - Pre-configured with custom design system
+- **SWC** - Fast JavaScript compiler for Vite
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+## Project Structure
 
-Follow these steps:
+```
+renova-expert-hub/
+├── src/
+│   ├── components/       # Reusable React components
+│   ├── hooks/           # Custom React hooks
+│   ├── integrations/
+│   │   └── supabase/    # Supabase client setup and types
+│   ├── lib/             # Utility functions
+│   ├── pages/           # Page components
+│   └── App.tsx          # Main application component
+├── tailwind.config.ts   # Tailwind CSS configuration
+├── vite.config.ts       # Vite build configuration
+├── tsconfig.json        # TypeScript configuration
+├── package.json         # Project dependencies
+└── README.md           # This file
+```
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+## Language Composition
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+- **TypeScript**: 93.2%
+- **PLpgSQL**: 4.5% (PostgreSQL stored procedures)
+- **CSS**: 1.5%
+- **Other**: 0.8%
 
-# Step 3: Install the necessary dependencies.
-npm i
+## Key Features
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+✨ **Modern UI Design** - Built with Radix UI and Tailwind CSS for a polished, professional appearance
+
+🎨 **Dark Mode Support** - Seamless theme switching with next-themes
+
+📊 **Data Visualization** - Recharts integration for interactive charts and graphs
+
+🔒 **Type Safety** - Full TypeScript support with Zod validation
+
+🚀 **Performance Optimized** - Vite for fast builds, React Query for efficient data fetching
+
+♿ **Accessibility** - Radix UI ensures WCAG compliance and accessible components
+
+📱 **Responsive Design** - Mobile-first approach with Tailwind CSS
+
+🎯 **Form Handling** - React Hook Form with Zod validation for robust form management
+
+## Getting Started
+
+### Prerequisites
+- Node.js 16+ 
+- npm or yarn package manager
+
+### Installation
+
+1. Clone the repository:
+```bash
+git clone https://github.com/Abdulfetah-Tech/renova-expert-hub.git
+cd renova-expert-hub
+```
+
+2. Install dependencies:
+```bash
+npm install
+```
+
+3. Set up environment variables:
+Create a `.env.local` file in the root directory with your Supabase credentials (already configured in the codebase).
+
+### Development
+
+Start the development server:
+```bash
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+The application will be available at `http://localhost:5173`
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+### Build for Production
 
-**Use GitHub Codespaces**
+Build the application:
+```bash
+npm run build
+```
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+Preview the production build:
+```bash
+npm run preview
+```
 
-## What technologies are used for this project?
+### Linting
 
-This project is built with:
+Run ESLint to check code quality:
+```bash
+npm run lint
+```
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+## Available Scripts
 
-## How can I deploy this project?
+- `npm run dev` - Start development server with hot module replacement
+- `npm run build` - Build for production
+- `npm run build:dev` - Build in development mode for debugging
+- `npm run lint` - Run ESLint to check code quality
+- `npm run preview` - Preview production build locally
 
-Simply open [Lovable](https://lovable.dev/projects/cd82266b-66f9-484d-8bf0-386bfe4237b1) and click on Share -> Publish.
+## Component Library
 
-## Can I connect a custom domain to my Lovable project?
+The project uses **Shadcn/ui** components, which include:
+- Accordion, Alert Dialog, Avatar
+- Buttons, Cards, Checkboxes
+- Dialogs, Dropdowns, Forms
+- Navigation menus, Tabs, Tables
+- Toast notifications, Tooltips
+- And many more...
 
-Yes, you can!
+All components are fully customizable through Tailwind CSS and stored in `src/components/ui/`
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+## Database Integration
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+Supabase provides:
+- PostgreSQL database with real-time capabilities
+- Authentication and authorization
+- Row-level security
+- RESTful API
+- Real-time subscriptions
+
+Database types are auto-generated and available in `src/integrations/supabase/types.ts`
+
+## Performance
+
+- **Fast Builds**: Vite provides sub-second builds
+- **Optimized Bundle**: Tree-shaking and code splitting
+- **Efficient Data Fetching**: TanStack React Query with caching
+- **Code Splitting**: Automatic route-based code splitting with React Router
+
+## Contributing
+
+Contributions are welcome! Please follow these steps:
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## License
+
+This project is private. For license information, please contact the repository owner.
+
+## Author
+
+**Abdulfetah-Tech** - [GitHub Profile](https://github.com/Abdulfetah-Tech)
+
+## Support
+
+For issues, bug reports, or feature requests, please open an [issue](https://github.com/Abdulfetah-Tech/renova-expert-hub/issues) on GitHub.
+
+---
+
+**Last Updated**: 2025
